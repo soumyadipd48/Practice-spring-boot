@@ -1,0 +1,49 @@
+#elasticsearch
+
+url-http://127.0.0.1:9200 or http://localhost:9200		#http://localhost:9200/_cat/indices
+
+cmd-elasticsearch.bat
+
+#kibana
+
+url-http://127.0.0.1:5601 or http://localhost:5601
+
+cmd-kibana.bat
+
+#logstash
+
+url-http://127.0.0.1:9600 or http://localhost:9600
+
+logstash.bat -f D:\logstash\config\logstash.conf --config.reload.automatic
+
+#filebeat
+
+filebeat.exe -e -c filebeat.yml -d "publish"
+
+
+run zooker first : .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+run kafka : .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+run kafka topic : .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic java_in_use_topic --from-beginning
+
+
+sonarqube token : bb10eb54eeb3f0745c6a35fe6bb0e546066217ab
+
+
+
+ba32f799572be23e91754508413d2813a1a0eef6
+
+
+mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Soumyadip@1
+
+mvn test-->it will create jacoco.exec file then run jacoco:report to generate html view in maven command
+
+clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+
+021bbb3ac0197b0862e7d19bba80de9551a96bf5
+
+sonar:sonar -Dsonar.login=021bbb3ac0197b0862e7d19bba80de9551a96bf5
+
+jacoco:report
+
